@@ -1,0 +1,12 @@
+wbs_path,task_code,task_name,task_type,duration_days,predecessor_code,rel_type,lag_days,constraint_type,constraint_date
+P.前期筹备,D001,项目开工,Milestone,0,,,,,
+P.前期筹备,D010,项目启动会与临建策划,Task,20,D001,SS,0,,
+P.设计,D020,初步设计,Task,45,D010,FS,0,,
+P.设计,D030,施工图设计,Task,90,D020,FS,0,,
+P.采购,D040,铁塔与导线订货,Task,60,D030,SS,0,,
+P.采购,D050,第一批物资到货,Task,45,D040,FS,30,,
+P.施工,D060,线路基础施工,Task,120,D050,FS,0,,
+P.施工,D070,铁塔组立,Task,90,D060,SS,60,,
+P.施工,D080,架线及附件安装,Task,75,D070,SS,45,,
+P.调试,D090,线路试验与调试,Task,20,D080,FS,0,,
+P.调试,M100,具备投运条件,Milestone,0,D090,FS,0,,

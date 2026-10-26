@@ -1,0 +1,51 @@
+{
+  "name": "dsh-plugin-p6",
+  "version": "0.2.0",
+  "private": false,
+  "type": "module",
+  "description": "Primavera P6 Professional 25.12 data plane for DeepSeek Harness: read-only queries, field dictionary, XML export/staging, CSV->XER generation, snapshot diff, lock/EPS maintenance.",
+  "keywords": [
+    "primavera",
+    "p6",
+    "xer",
+    "schedule",
+    "deepseek-harness",
+    "dsh-plugin"
+  ],
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "lib/*.js",
+    "data/*.json",
+    "data/*.md",
+    "docs/*.md",
+    "knowledge/**",
+    "eval/**",
+    "examples/*",
+    "test/*.mjs",
+    "locale/*.json",
+    "icon.svg",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  }
+}
