@@ -1,4 +1,13 @@
-﻿# dsh-plugin-p6 — Primavera P6 25.12 schedule toolkit for DeepSeek Harness
+# dsh-plugin-p6 — Primavera P6 25.12 schedule toolkit for DeepSeek Harness
+
+> ⚠️ **This plugin does not ship Primavera P6.** You need your own licensed
+> P6 Professional 25.x installation. The plugin only reads and writes that
+> installation's data — it contains no Oracle binaries.
+>
+> **Credentials:** P6 has no plaintext password store. The plugin reads the
+> `USERS.PASSWD` SHA-256 hash and passes it to the P6 CLI. It never stores
+> plaintext, never uploads anything, and never touches a database it was not
+> explicitly pointed at.
 
 A [DeepSeek Harness](https://github.com/deepseek-ai) plugin that turns Primavera P6
 Professional 25.x into a scriptable data source: read-only queries, field dictionary,
@@ -52,9 +61,17 @@ Every read copies the database (with `-wal`/`-shm`) to a temp file and opens it
 
 ## Install
 
+**From GitHub (recommended):**
+
 ```powershell
 $cli = "<DeepSeek Harness>\resources\runtime\cli\bin\dsh.cmd"
-& $cli plugin --profile desktop add link:D:\path\to\dsh-plugin-p6-25.12
+& $cli plugin --profile desktop add github:cfeng4087-hash/dsh-plugin-p6
+```
+
+**From a local checkout (development):**
+
+```powershell
+& $cli plugin --profile desktop add link:D:\path\to\dsh-plugin-p6
 ```
 
 Fully quit and reopen the desktop client (host plugins load at startup).
